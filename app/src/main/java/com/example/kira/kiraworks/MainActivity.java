@@ -2,14 +2,24 @@ package com.example.kira.kiraworks;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private Button mViewListButton;
+    private Button mAddFriendButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAddFriendButton = (Button) findViewById(R.id.findAddFriendButton);
+        mAddFriendButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, "New Friend Added", Toast.LENGTH_LONG).show();
+                }
+            });
     }
 }
