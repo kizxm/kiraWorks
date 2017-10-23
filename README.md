@@ -1,16 +1,13 @@
-# Kira Works
+# Kira★Catalog
 ✦✦✦✦✦✦✦✦✦✦✦
 
-#### October 13, 2017
-✦✦✦✦✦✦✦✦✦✦✦
-
+#### October 23, 2017
 #### By Kira Loo
 ✦✦✦✦✦✦✦✦✦✦✦
 
 ## Description
-✦✦✦✦✦✦✦✦✦✦✦
 
-_A quick application to make and save lists._
+_What is Kira★Catalog? A simple app for accessing anime titles and viewing their details._
 
 ## Setup/Installation Requirements
 ✦✦✦✦✦✦✦✦✦✦✦

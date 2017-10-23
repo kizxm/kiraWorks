@@ -20,6 +20,8 @@ public class ListActivity extends AppCompatActivity {
 
     private String[] shows = new String[] {"title1", "title2", "title3", "title4", "title5", "title6",
                                            "title7", "title8", "title9", "title10", "title11", "title12"};
+    private String[] info = new String[] {"desc1", "desc2", "desc3", "desc4", "desc5", "desc6",
+                                          "desc7", "desc8", "desc9", "desc10", "desc11", "desc12"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         ButterKnife.bind(this);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, shows);
+        MyListArrayAdapter adapter = new MyListArrayAdapter(this, android.R.layout.simple_list_item_1, shows, info);
         mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
