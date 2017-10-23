@@ -63,7 +63,7 @@
     <EditText
         android:layout_width="352dp"
         android:layout_height="67dp"
-        android:id="@+id/locationEditText"
+        android:id="@+id/numberEditText"
         android:background="@color/colorTextIcons"
         android:layout_above="@+id/findViewListButton"
         android:padding="5dp"

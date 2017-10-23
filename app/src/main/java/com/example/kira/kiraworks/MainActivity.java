@@ -10,25 +10,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
-    public static final String TAG = MainActivity.class.getSimpleName();
-    private Button mViewListButton;
-    private EditText mNumberText;
-    private TextView mAppNameTextView;
+
+    @Bind(R.id.findViewListButton) Button mFindViewListButton;
+    @Bind(R.id.numberEditText) EditText mNumberText;
+    @Bind(R.id.appNameTextView) TextView mAppNameTextView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        mNumberText = (EditText) findViewById(R.id.locationEditText);
-        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
         Typeface lieFont = Typeface.createFromAsset(getAssets(), "fonts/lie.ttf");
         mAppNameTextView.setTypeface(lieFont);
 
-        mViewListButton = (Button) findViewById(R.id.findViewListButton);
-        mViewListButton.setOnClickListener(new View.OnClickListener() {
+        mFindViewListButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String number = mNumberText.getText().toString();

@@ -10,9 +10,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class ListActivity extends AppCompatActivity {
-    private TextView mNumberTextView;
-    private ListView mListView;
+    @Bind(R.id.numberTextView) TextView mNumberTextView;
+    @Bind(R.id.listView) ListView mListView;
+
     private String[] shows = new String[] {"title1", "title2", "title3", "title4", "title5", "title6",
                                            "title7", "title8", "title9", "title10", "title11", "title12"};
 
@@ -20,9 +25,7 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
-        mListView = (ListView) findViewById(R.id.listView);
-        mNumberTextView = (TextView) findViewById(R.id.numberTextView);
+        ButterKnife.bind(this);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, shows);
         mListView.setAdapter(adapter);
