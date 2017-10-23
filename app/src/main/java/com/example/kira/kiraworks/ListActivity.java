@@ -3,6 +3,7 @@ package com.example.kira.kiraworks;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,10 +12,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import java.io.IOException;
+import java.net.URL;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
+
 
 public class ListActivity extends AppCompatActivity {
+    public static final String TAG = ListActivity.class.getSimpleName();
+
     @Bind(R.id.numberTextView) TextView mNumberTextView;
     @Bind(R.id.listView) ListView mListView;
 
@@ -43,5 +53,28 @@ public class ListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String number = intent.getStringExtra("number");
         mNumberTextView.setText("Anime # " + number);
+        getAnime(number);
+    }
+
+    private void getAnime(String number) {
+        JikanService jikanService = new JikanService();
+        jikanService.findAnime(number, new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    String jsonData = response.body().string();
+                    Log.v(TAG, jsonData);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }
