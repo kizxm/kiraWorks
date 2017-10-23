@@ -11,9 +11,11 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.findAddFriendButton) Button mAddFriendButton;
-    @Bind(R.id.findViewListButton) Button mViewListButton;
+public class MainActivity extends AppCompatActivity {
+//    @Bind(R.id.findAddFriendButton) Button mAddFriendButton;
+//    @Bind(R.id.findViewListButton) Button mViewListButton;
+
+    private Button mViewListButton;
 
 
     @Override
@@ -21,20 +23,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
 
-        mViewListButton.setOnClickListener(this);
-        mAddFriendButton.setOnClickListener(this);
+        mViewListButton = (Button) findViewById(R.id.findViewListButton);
+            mViewListButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, "Text!!", Toast.LENGTH_LONG).show();
+                }
+            });
 
-    }
-        @Override
-            public void onClick(View v) {
-            if(v == mViewListButton) {
-                Intent intentView = new Intent(MainActivity.this, ListActivity.class);
-                startActivity(intentView);
-            }
-            else if(v == mAddFriendButton) {
-                Toast.makeText(MainActivity.this, "New Friend Added", Toast.LENGTH_LONG).show();
-            }
+
+//        mAddFriendButton.setOnClickListener(this);
+
+//    }
+//        @Override
+//            public void onClick(View v) {
+//            if(v == mViewListButton) {
+//                Intent intentView = new Intent(MainActivity.this, ListActivity.class);
+//                startActivity(intentView);
+//            }
+////            else if(v == mAddFriendButton) {
+////                Toast.makeText(MainActivity.this, "New Friend Added", Toast.LENGTH_LONG).show();
+////            }
     }
 }
