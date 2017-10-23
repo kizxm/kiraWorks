@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     String number = mNumberText.getText().toString();
-                    Log.d(TAG, number);
                     Intent intent = new Intent(MainActivity.this, ListActivity.class);
+                    intent.putExtra("number", number);
                     startActivity(intent);
                 }
             });
