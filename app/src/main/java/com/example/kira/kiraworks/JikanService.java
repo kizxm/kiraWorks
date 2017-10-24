@@ -1,6 +1,8 @@
 package com.example.kira.kiraworks;
 
 
+import android.util.Log;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -14,8 +16,7 @@ public class JikanService {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.JIKAN_BASE_URL).newBuilder();
-        urlBuilder.addQueryParameter(Constants.JIKAN_NUMBER_QUERY_PARAMETER, number);
+        HttpUrl.Builder urlBuilder = HttpUrl.parse("https://jikan.me/api/anime/").newBuilder();
         String url = urlBuilder.build().toString();
 
         Request request = new Request.Builder()
@@ -24,5 +25,6 @@ public class JikanService {
 
         Call call = client.newCall(request);
         call.enqueue(callback);
+        Log.d("url", url);
     }
 }
