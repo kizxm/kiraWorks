@@ -9,10 +9,12 @@
 
 ![Alt text](img/img1.png)
 ![Alt text](img/img2.png)
-✦✦✦✦✦✦✦✦✦✦✦
 
+✦✦✦✦✦✦✦✦✦✦✦
 _What is Kira★Catalog? A simple app for accessing anime titles and viewing their details. Currently the app is in the middle of construction, future features include extended listing and social media features._
 
+
+_for future reference & build out http://square.github.io/retrofit/ ._
 
 ## Setup/Installation Requirements
 ✦✦✦✦✦✦✦✦✦✦✦

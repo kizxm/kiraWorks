@@ -1,5 +1,7 @@
 package com.example.kira.kiraworks;
 
+import java.util.ArrayList;
+
 public class Anime {
 
     private String image;
@@ -7,10 +9,10 @@ public class Anime {
     private String jpntitle;
     private String studio;
     private String rating;
-    private int episodes;
-    private double score;
+    private double episodes;
+    private ArrayList<String> score = new ArrayList<>();
 
-    public Anime(String image, String title, String jpntitle, String studio, String rating, int episodes, double score) {
+    public Anime(String image, String title, String jpntitle, String studio, String rating, double episodes, ArrayList<String> score) {
         this.image = image;
         this.title = title;
         this.jpntitle = jpntitle;
@@ -40,11 +42,11 @@ public class Anime {
         return rating;
     }
 
-    public int getEpisodes() {
+    public double getEpisodes() {
         return episodes;
     }
 
-    public double getScore() {
+    public ArrayList<String> getScore() {
         return score;
     }
 }

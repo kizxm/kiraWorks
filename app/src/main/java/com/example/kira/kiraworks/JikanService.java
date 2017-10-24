@@ -51,8 +51,13 @@ public class JikanService {
                 String jpntitle = animeJSON.getString("jpntitle");
                 String studio = animeJSON.getString("studio");
                 String rating = animeJSON.getString("rating");
-                int episodes = animeJSON.getInt("episodes");
-                double score = animeJSON.getDouble("score");
+                double episodes = animeJSON.getDouble("episodes");
+
+                ArrayList<String> score = new ArrayList<>();
+                JSONArray scoreJSON = animeJSON.getJSONArray("score");
+                for (int y = 0; y < scoreJSON.length(); y++) {
+                    score.add(scoreJSON.getJSONObject(y).getString("SCORES"));
+                }
 
                 Anime anime = new Anime(image, title, jpntitle, studio, rating, episodes, score);
                 animes.add(anime);
