@@ -33,10 +33,6 @@ _What is Kira★Catalog? A simple app for accessing anime titles and viewing the
 *
 *
 *
-leave off point
-
-https://www.learnhowtoprogram.com/android/web-service-backends-and-custom-fragments/api-requests-and-responses
-
 
 ### License
 ✦✦✦✦✦✦✦✦✦✦✦✦
