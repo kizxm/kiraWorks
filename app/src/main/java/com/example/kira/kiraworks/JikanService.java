@@ -1,6 +1,7 @@
 package com.example.kira.kiraworks;
 
 
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -17,6 +18,8 @@ import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import static android.content.ContentValues.TAG;
 
 public class JikanService {
 
@@ -37,13 +40,16 @@ public class JikanService {
         Log.d("url", url);
     }
 
-    public ArrayList<Anime> processResults(Response response) {
+        public ArrayList<Anime> processResults(Response response) {
         ArrayList<Anime> animes = new ArrayList<>();
-
+        Log.d("inside array list", "fgdfgdfgd");
         try {
-            String jsonData = response.body().string();
+            String jsonData = response.toString();
+            Log.d("inside array JSON", "house");
             JSONObject jikanJSON = new JSONObject(jsonData);
-            JSONArray titlesJSON = jikanJSON.getJSONArray("titles");
+            JSONArray titlesJSON = jikanJSON.getJSONArray("title");
+
+            Log.d("jsonData", jikanJSON+"");
             for (int i = 0; i < titlesJSON.length(); i++) {
                 JSONObject animeJSON = titlesJSON.getJSONObject(i);
                 String image = animeJSON.optString("image", "NO IMAGE");
@@ -63,12 +69,14 @@ public class JikanService {
                 animes.add(anime);
             }
         }
-        catch (IOException e){
-            e.printStackTrace();
-        }
         catch (JSONException e){
             e.printStackTrace();
+            Log.d("JSONEXcept", e+"");
         }
+//        catch (IOException e){
+//            e.printStackTrace();
+//            Log.d("IOExcept", e+"");
+//        }
         return animes;
     }
 }
