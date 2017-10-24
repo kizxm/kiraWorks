@@ -16,7 +16,7 @@ public class JikanService {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
-        HttpUrl.Builder urlBuilder = HttpUrl.parse("https://jikan.me/api/anime/").newBuilder();
+        HttpUrl.Builder urlBuilder = HttpUrl.parse("https://jikan.me/api/anime/" + number).newBuilder();
         String url = urlBuilder.build().toString();
 
         Request request = new Request.Builder()
