@@ -1,4 +1,4 @@
-# Kira★Catalog
+# Kira★Catalog -continued progress
 ✦✦✦✦✦✦✦✦✦✦✦
 
 #### October 23, 2017
@@ -7,7 +7,13 @@
 
 ## Description
 
+
+![Alt text](img/img1.png)
+![Alt text](img/img2.png)
+
+
 _What is Kira★Catalog? A simple app for accessing anime titles and viewing their details._
+
 
 ## Setup/Installation Requirements
 ✦✦✦✦✦✦✦✦✦✦✦
@@ -21,7 +27,7 @@ _What is Kira★Catalog? A simple app for accessing anime titles and viewing the
 ✦✦✦✦✦✦✦✦✦✦✦
 
 | ✦ Behavior      | ✦ Example Input      | ✦ Example Output       |
-| ------------- | ------------- | ------------- |
+| sample anime id # | 35062 | "魔法使いの嫁" |
 | ------------- | ------------- | ------------- |
 | ------------- | ------------- | ------------- |
 | ------------- | ------------- | ------------- |

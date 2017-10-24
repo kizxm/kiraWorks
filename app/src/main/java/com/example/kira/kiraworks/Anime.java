@@ -7,14 +7,16 @@ public class Anime {
     private String jpntitle;
     private String studio;
     private String rating;
+    private int episodes;
     private double score;
 
-    public Anime(String image, String title, String jpntitle, String studio, String rating, double score) {
+    public Anime(String image, String title, String jpntitle, String studio, String rating, int episodes, double score) {
         this.image = image;
         this.title = title;
         this.jpntitle = jpntitle;
         this.studio = studio;
         this.rating = rating;
+        this.episodes = episodes;
         this.score = score;
     }
 
@@ -36,6 +38,10 @@ public class Anime {
 
     public String getRating() {
         return rating;
+    }
+
+    public int getEpisodes() {
+        return episodes;
     }
 
     public double getScore() {
