@@ -40,12 +40,18 @@ public class JikanService {
         Log.d("url", url);
     }
 
-        public ArrayList<Anime> processResults(Response response) {
-        ArrayList<Anime> animes = new ArrayList<>();
+        public ArrayList<Anime> processResults(Response response) throws IOException {
+            ArrayList<Anime> animes = new ArrayList<>();
+
+
         Log.d("inside array list", "fgdfgdfgd");
+
         try {
+
             String jsonData = response.toString();
-            Log.d("inside array JSON", "house");
+
+            Log.d("inside array JSON", jsonData);
+
             JSONObject jikanJSON = new JSONObject(jsonData);
             JSONArray titlesJSON = jikanJSON.getJSONArray("title");
 
